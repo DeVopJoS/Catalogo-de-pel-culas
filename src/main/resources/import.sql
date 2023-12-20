@@ -8,7 +8,5 @@ INSERT INTO ACTOR(NOMBRE, URL_IMAGE) VALUES ('Adam Sandler', 'https://upload.wik
 INSERT INTO ACTOR(NOMBRE, URL_IMAGE) VALUES ('Miranda Cosgrove', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Miranda_Cosgrove_NickRewind_2022.jpg/220px-Miranda_Cosgrove_NickRewind_2022.jpg');
 INSERT INTO ACTOR(NOMBRE, URL_IMAGE) VALUES ('Chloë Grace Moretz', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Chloe_Moretz_2018_2.jpg/220px-Chloe_Moretz_2018_2.jpg');
 
-INSERT INTO PELICULA(NOMBRE, GENERO_ID, FECHA_ESTRENO) VALUES ('Pelicula test', 1, '2022-01-01');
-INSERT INTO PELICULA(NOMBRE, GENERO_ID, FECHA_ESTRENO) VALUES ('Pelicula test2', 2, '2022-01-01');
-INSERT INTO PELICULA(NOMBRE, GENERO_ID, FECHA_ESTRENO) VALUES ('Pelicula test3', 3, '2022-01-01');
-INSERT INTO PELICULA(NOMBRE, GENERO_ID, FECHA_ESTRENO) VALUES ('Pelicula test4', 4, '2022-01-01');
+INSERT INTO PELICULA(NOMBRE, GENERO_ID, FECHA_ESTRENO) VALUES ('Pelicula test', 1, '2023-01-01');
+INSERT INTO PELICULA(NOMBRE, GENERO_ID, FECHA_ESTRENO, IMAGEN) VALUES ('Como si fuera la primera vez', 2, '2023-12-22', 'Como si fuera la primera vez.jpg');
