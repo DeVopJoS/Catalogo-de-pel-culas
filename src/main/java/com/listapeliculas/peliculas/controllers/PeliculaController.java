@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 import java.io.IOException;
@@ -68,6 +69,17 @@ public class PeliculaController {
         return "pelicula";
     }
 
+    @GetMapping("/pelicula/{id}/delete")
+    public String eliminar(@PathVariable(name="id") Long id, Model model, RedirectAttributes redirectAttr){
+
+        service.delete(id);
+
+        redirectAttr.addAttribute("msj", "La pelicula fue eliminada correatamente");
+        redirectAttr.addAttribute("tipoMsj", "success");
+
+        return "redirect:/listado";
+    }
+
     @PostMapping("/pelicula")
     public  String guardar(@Valid Pelicula pelicula, BindingResult br, @ModelAttribute(name="ids") String ids, Model model, @RequestParam("archivo")MultipartFile imagen){
 
@@ -114,9 +126,14 @@ public class PeliculaController {
     }
 
     @GetMapping("/listado")
-    public String listado(Model model){
+    public String listado(Model model, @RequestParam(required = false) String msj, @RequestParam(required = false) String tipoMsj){
         model.addAttribute("titulo", "Listado de peliculas");
         model.addAttribute("peliculas", service.findAll());
+
+        if (!"".equals(tipoMsj) && !"".equals(msj) ){
+            model.addAttribute("msj", msj);
+            model.addAttribute("tipoMsj", tipoMsj);
+        }
 
         return "listado";
     }
